@@ -13,7 +13,7 @@
         android:text="Student Details"
         android:textColor="@color/black"
         android:textSize="40sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
         />
 
@@ -45,21 +45,21 @@
         android:layout_height="wrap_content"
         android:text="Male"
         android:textSize="20sp"
-        android:layout_margin="12dp"/>
+        android:layout_margin="10dp"/>
 
     <RadioButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Female"
         android:textSize="20sp"
-        android:layout_margin="12dp"/>
+        android:layout_margin="10dp"/>
 
     <RadioButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Others"
         android:textSize="20sp"
-        android:layout_margin="12dp"/>
+        android:layout_margin="10dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:shadowColor="@android:color/transparent"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:background="@drawable/roundedcorner"/>
 
 </LinearLayout>
