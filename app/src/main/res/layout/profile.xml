@@ -30,7 +30,8 @@
         android:src="@drawable/ic_baseline_delete_24"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="333dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tvName"/>
 
     <TextView
         android:id="@+id/tvName"

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -21,6 +22,7 @@ class ProfileAdapter (
           val tvAddress:TextView
           val tvAge:TextView
           val tvGender:TextView
+          val delete:ImageView
 
 
           init {
@@ -29,6 +31,7 @@ class ProfileAdapter (
               tvAge=view.findViewById(R.id.tvAge)
               tvAddress=view.findViewById(R.id.tvAddress)
               tvGender=view.findViewById(R.id.tvGender)
+              delete=view.findViewById(R.id.delete)
           }
         }
 
@@ -40,8 +43,9 @@ class ProfileAdapter (
     override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
         val profile=lstProfile[position]
         holder.tvName.text=profile.Name
-        holder.tvAddress.text=profile.Address
         holder.tvAge.text= profile.Age.toString()
+        holder.tvAddress.text=profile.Address
+        holder.tvGender.text=profile.Gender
 
         Glide.with(context)
                 .load(profile.Image)
