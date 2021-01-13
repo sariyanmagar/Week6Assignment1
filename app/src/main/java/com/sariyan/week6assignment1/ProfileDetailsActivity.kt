@@ -24,7 +24,6 @@ class ProfileDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_details)
 
-
         imgProfile=findViewById(R.id.imgProfile)
         tvName=findViewById(R.id.tvName)
         tvAge=findViewById(R.id.tvAge)
@@ -40,7 +39,7 @@ class ProfileDetailsActivity : AppCompatActivity() {
             val Address=intent.Address
             val Age=intent.Age
             val Gender=intent.Gender
-            val Image=intent.Image
+            val Image=intent.ProfileImage
 
             tvName.text=Name
             tvAge.text=Age.toString()

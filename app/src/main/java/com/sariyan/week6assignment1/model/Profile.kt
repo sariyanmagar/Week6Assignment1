@@ -6,7 +6,7 @@ import android.os.Parcelable
 data class Profile(
         val profileId: Int?=null,
         val Name: String?=null,
-        val Image: String?=null,
+        val ProfileImage: String?=null,
         val Address: String?=null,
         val Gender:String?=null,
         val Age: Int?=null,
@@ -23,7 +23,7 @@ data class Profile(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(profileId)
         parcel.writeString(Name)
-        parcel.writeString(Image)
+        parcel.writeString(ProfileImage)
         parcel.writeString(Address)
         parcel.writeString(Gender)
         parcel.writeValue(Age)

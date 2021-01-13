@@ -36,7 +36,7 @@
         android:layout_height="27dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:text="Actor ID"
+        android:text="ID"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
         app:layout_constraintTop_toTopOf="parent"
