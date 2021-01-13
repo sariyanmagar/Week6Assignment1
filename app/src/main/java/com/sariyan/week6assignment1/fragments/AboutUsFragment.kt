@@ -12,13 +12,10 @@ import com.sariyan.week6assignment1.R
 
 class AboutUsFragment : Fragment() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,13 +27,12 @@ class AboutUsFragment : Fragment() {
         val webView: WebView =view.findViewById(R.id.WebView)
         webView.loadUrl("https://softwarica.edu.np/")
 
-        val webSettings: WebSettings = webView.settings
-        webSettings.javaScriptEnabled = true
-        webSettings.loadWithOverviewMode = true
-
-        //Force links and redirects to open in the WebView instead of in a browser
-        webView.webViewClient = WebViewClient()
-
+//        val webSettings: WebSettings = webView.settings
+//        webSettings.javaScriptEnabled = true
+//        webSettings.loadWithOverviewMode = true
+//
+//        webView.webViewClient = WebViewClient()
+//
         return view
     }
 

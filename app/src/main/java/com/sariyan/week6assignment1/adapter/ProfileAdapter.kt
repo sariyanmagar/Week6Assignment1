@@ -47,8 +47,9 @@ class ProfileAdapter (
         holder.tvAddress.text=profile.Address
         holder.tvGender.text=profile.Gender
 
+
         Glide.with(context)
-                .load(profile.Image)
+                .load(profile.ProfileImage)
                 .into(holder.imgProfile)
     }
 
