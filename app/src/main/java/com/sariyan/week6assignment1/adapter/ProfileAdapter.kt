@@ -9,18 +9,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sariyan.week6assignment1.R
+import com.sariyan.week6assignment1.StoreData
+import com.sariyan.week6assignment1.fragments.HomeFragment
 import com.sariyan.week6assignment1.model.Profile
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfileAdapter (
     val lstProfile:ArrayList<Profile>,
-    val context:Context
+    val context:HomeFragment
     ):RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>(){
+
+    private var storeData=StoreData()
+
+
         class ProfileViewHolder(view: View):RecyclerView.ViewHolder(view){
           val imgProfile:CircleImageView
           val tvName:TextView
-          val tvAddress:TextView
           val tvAge:TextView
+          val tvAddress:TextView
           val tvGender:TextView
           val delete:ImageView
 
@@ -47,6 +53,10 @@ class ProfileAdapter (
         holder.tvAddress.text=profile.Address
         holder.tvGender.text=profile.Gender
 
+        holder.delete.setOnClickListener {
+            storeData.deleteProfile(profile)
+            notifyItemRemoved(position)
+        }
 
         Glide.with(context)
                 .load(profile.ProfileImage)

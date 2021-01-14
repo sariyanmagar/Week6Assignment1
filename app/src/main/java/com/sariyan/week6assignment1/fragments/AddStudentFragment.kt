@@ -1,15 +1,14 @@
 package com.sariyan.week6assignment1.fragments
 
+import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
 import com.sariyan.week6assignment1.R
+import de.hdodenhof.circleimageview.CircleImageView
 
 class AddStudentFragment : Fragment() {
     private lateinit var etFullName: EditText
@@ -20,6 +19,9 @@ class AddStudentFragment : Fragment() {
     private lateinit var Others: RadioButton
     private lateinit var etAddress: EditText
     private lateinit var btnSave: Button
+    private lateinit var image: CircleImageView
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +36,8 @@ class AddStudentFragment : Fragment() {
         Female = view.findViewById(R.id.Female)
         Others = view.findViewById(R.id.Others)
         btnSave = view.findViewById(R.id.btnSave)
+        image=view.findViewById(R.id.imgProfile)
+
     }
 }
 
