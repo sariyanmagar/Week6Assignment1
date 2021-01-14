@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sariyan.week6assignment1.R
+import com.sariyan.week6assignment1.StoreData
+import com.sariyan.week6assignment1.adapter.ProfileAdapter
 import com.sariyan.week6assignment1.model.Profile
 
 class HomeFragment : Fragment() {
-    private var lstProfile=ArrayList<Profile>()
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var rvProfile: RecyclerView
+    private var storeData=StoreData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +25,17 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view= inflater.inflate(R.layout.fragment_home, container, false)
+        rvProfile=view.findViewById(R.id.rvProfile)
+        loadProfileAdapter()
+        return view
+    }
+
+    private fun loadProfileAdapter(){
+        val array = storeData.returnProfile()
+        val adapter=ProfileAdapter(array,this)
+        rvProfile.layoutManager=LinearLayoutManager(view?.context,LinearLayoutManager.VERTICAL,false)
+        rvProfile.adapter=adapter
     }
 
 
