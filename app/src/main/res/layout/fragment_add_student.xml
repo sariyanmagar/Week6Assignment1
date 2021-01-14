@@ -10,9 +10,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:gravity="center"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Student Details" />
 
@@ -22,16 +22,15 @@
         android:id="@+id/scrollView">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
             <EditText
                 android:id="@+id/etImage"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:ems="15"
-                android:layout_marginTop="10dp"
+                android:ems="25"
                 android:hint="Profile Image"
                 android:textSize="20dp"/>
 
@@ -39,24 +38,23 @@
                 android:id="@+id/etFullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="15"
+                android:ems="25"
                 android:hint="Full Name"
                 android:textSize="20dp"/>
 
-
             <EditText
                 android:id="@+id/etAge"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Age"
+                android:ems="25"
                 android:inputType="number"
                 android:textSize="20dp"/>
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="20sp"
                 android:layout_marginBottom="10dp"
                 android:text="Select Gender"/>
 
@@ -91,18 +89,20 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="15"
+                android:ems="25"
                 android:hint="Address"
                 android:textSize="20dp"/>
 
             <Button
-                android:id="@+id/btnSave"
-                android:layout_marginTop="20dp"
-                android:layout_width="334dp"
-                android:layout_height="64dp"
-                android:background="@drawable/roundedcorner"
-                android:textSize="20dp"
-                android:text="Save" />
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textSize="25sp"
+                android:shadowColor="@android:color/transparent"
+                android:layout_margin="10dp"
+                android:background="@drawable/roundedcorner"/>
+
 
         </LinearLayout>
 
