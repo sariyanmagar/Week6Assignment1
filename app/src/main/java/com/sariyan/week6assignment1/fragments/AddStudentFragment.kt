@@ -11,30 +11,28 @@ import com.sariyan.week6assignment1.R
 import com.sariyan.week6assignment1.StoreData
 import com.sariyan.week6assignment1.model.Profile
 
-class AddStudentFragment : Fragment() {
+class AddStudentFragment: Fragment() {
+
+    private lateinit var btnSave: Button
     private lateinit var etFullName: EditText
     private lateinit var etAge: EditText
-    private lateinit var tvGender: TextView
+    private lateinit var etImage: EditText
+    private lateinit var etAddress: EditText
     private lateinit var Male: RadioButton
     private lateinit var Female: RadioButton
     private lateinit var Others: RadioButton
-    private lateinit var etAddress: EditText
-    private lateinit var btnSave: Button
-    private lateinit var etImage: EditText
-
     private var gender = " "
 
-
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
+            inflater: LayoutInflater,
+            container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_student, container, false)
         etFullName = view.findViewById(R.id.etFullName)
+        etAge = view.findViewById(R.id.etAge)
         etImage = view.findViewById(R.id.etImage)
-        etAge = view.findViewById(R.id.tvAge)
-        etAddress = view.findViewById(R.id.tvAddress)
-        tvGender = view.findViewById(R.id.tvGender)
+        etAddress = view.findViewById(R.id.etAddress)
         Male = view.findViewById(R.id.Male)
         Female = view.findViewById(R.id.Female)
         Others = view.findViewById(R.id.Others)
@@ -43,37 +41,33 @@ class AddStudentFragment : Fragment() {
         Male.setOnClickListener {
             gender = "Male"
         }
-
         Female.setOnClickListener {
             gender = "Female"
         }
-
         Others.setOnClickListener {
             gender = "Others"
         }
 
         btnSave.setOnClickListener {
-            if (validInput()) {
-                var fullName=etFullName.text.toString()
-                var profileImage = etImage.text.toString()
+            if(validateInput()) {
+                var fullname = etFullName.text.toString()
+                var ProfileImage = etImage.text.toString()
                 var age = etAge.text.toString()
                 var address = etAddress.text.toString()
-                StoreData().appendProfile(Profile(fullName, profileImage, age, address, gender))
-                Toast.makeText(view?.context, "Student's Profile added successfully", Toast.LENGTH_LONG).show()
+                StoreData().appendProfile(Profile(fullname, ProfileImage, age, address, gender))
+                Toast.makeText(view?.context, "Student Added Sucessfully", Toast.LENGTH_LONG).show()
                 etFullName.setText("")
                 etImage.setText("")
-                etAge.setText("")
                 etAddress.setText("")
+                etAge.setText("")
                 etFullName.requestFocus()
-
-            } else {
-                Toast.makeText(view?.context, "Invalid", Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(view?.context, "Try Again", Toast.LENGTH_SHORT).show()
             }
         }
         return view
     }
-
-    private fun validInput(): Boolean {
+    private fun validateInput(): Boolean {
         var res : Boolean = true
         when {
             TextUtils.isEmpty(etFullName.text) -> {
