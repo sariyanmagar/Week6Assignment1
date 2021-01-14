@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Profile(
-        val profileId: Int?=null,
+        val profileId: Int? =null,
         val Name: String?=null,
         val ProfileImage: String?=null,
         val Address: String?=null,

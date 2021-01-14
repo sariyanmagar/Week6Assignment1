@@ -19,7 +19,7 @@ class StoreData {
         listProfile.remove(profile)
     }
 
-    public fun setLoggegIn(id:Profile){
+    public fun setLoggegIn(id: Profile?){
         println(id)
         loggedIn=id
     }
